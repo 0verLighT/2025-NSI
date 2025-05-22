@@ -1,11 +1,12 @@
-def voisins_entrants(liste, i):
-    '''Renvoie la liste des voisins de l'élément d'indice i dans liste.'''
-    voisins = []
-    if i > 0:
-        voisins.append(liste[i - 1])
-    if i < len(liste) - 1:
-        voisins.append(liste[i + 1])
-    return voisins
+
+def voisins_entrants(adj, x):
+    result = []
+    for i, voisins in enumerate(adj):
+        if x in voisins:
+            result.append(i)
+    return result
+
+
 
 print(voisins_entrants([[1, 2], [2], [0], [0]], 0))
 print(voisins_entrants([[1, 2], [2], [0], [0]], 1))
