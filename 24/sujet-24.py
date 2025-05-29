@@ -1,3 +1,17 @@
+def enumere(tab):
+    dico = {}
+    for i, k in enumerate(tab):
+        if k in dico:
+            dico[k].append(i)
+        else:
+            dico[k] = [i]
+    return dico
+
+
+print(enumere([]))
+print(enumere([1, 2, 3]))
+print(enumere([1, 1, 2, 3, 2, 1]))
+
 class Noeud:
     """Classe représentant un noeud d'un arbre binaire"""
     def __init__(self, etiquette, gauche, droit):
@@ -23,10 +37,20 @@ def insere(arbre, cle):
     if arbre == None:
         return Noeud(cle, None, None) # creation d'une feuille
     else:
-        if ...: 
+        if cle < arbre.etiquette:
             arbre.gauche = insere(arbre.gauche, cle)
         else:
-            arbre.droit = ... 
+            arbre.droit = insere(arbre.droit, cle)
         return arbre
 
 
+a = Noeud(5, None, None)
+a = insere(a, 2)
+a = insere(a, 3)
+a = insere(a, 7)
+print(parcours(a, []))
+a = insere(a, 1)
+a = insere(a, 4)
+a = insere(a, 6)
+a = insere(a, 8)
+print(parcours(a, []))
